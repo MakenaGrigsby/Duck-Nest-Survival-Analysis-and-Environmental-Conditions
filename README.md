@@ -40,6 +40,35 @@ The analysis was conducted in R using packages including:
 - `tidyverse`
 - `ggplot2`
 - `daymetr`
+```text
+
+duck-nest-survival-analysis/
+
+├── README.md
+
+├── report/
+
+│   ├── 218_Project.pdf
+
+│   └── 218_Project.tex
+
+├── R/
+
+│   ├── 01_data_cleaning.R
+
+│   ├── 02_exploratory_survival.R
+
+│   ├── 03_weather_processing.R
+
+│   ├── 04_cox_models.R
+
+│   ├── 05_interval_censored_aft.R
+
+│   └── 06_diagnostics_sensitivity.R
+
+├── plots/
+
+└── results/
 
 ## Author
 
