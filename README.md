@@ -69,7 +69,7 @@ duck-nest-survival-analysis/
     └── 06_diagnostics_sensitivity.R
 ```
 
-File Descriptions
+## File Descriptions
 
 * robel_2018.06.15.csv: original duck nest dataset used in the analysis
 * duck_nest_survival_cleaned.csv: cleaned dataset with initiation-based survival variables
@@ -80,15 +80,8 @@ File Descriptions
 * code/05_interval_censored_aft.R: fits interval-censored accelerated failure time models
 * code/06_diagnostics_sensitivity.R: runs diagnostic checks and sensitivity analyses
 
-Methods
 
-The final analysis used initiation-based survival time. Failed nests were represented using initiation-based lower and upper failure-time bounds, while nests not observed to fail were treated as right-censored after their final check.
-
-Candidate interval-censored AFT models included Weibull, log-normal, and log-logistic distributions. These models were compared using AIC, and the log-normal AFT model was selected as the final model.
-
-Sensitivity analyses included midpoint timing for failed nests, removing nests with high age at discovery, spline checks for weather variables, and a Robel density by first-7-day temperature interaction.
-
-Software
+## Software
 
 The analysis was conducted in R. Main packages used include:
 
