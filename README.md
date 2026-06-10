@@ -29,6 +29,9 @@ Because of this, the analysis used estimated nest initiation as the time origin 
 | Right-censoring | A nest was not observed to fail by the final field check, so its later failure time was unknown. |
 | Interval-censoring | A failed nest was known to be active at one check and failed by a later check, so the exact failure time was only known to fall within that interval. |
 | Estimated initiation | The estimated date when the nest began. This was used as the time origin for survival time. |
+| Initiation-based survival time | Survival time measured from estimated nest initiation rather than from the date the nest was first discovered. |
+| Cox model time | For the Cox model, survival time was defined as `LastChecked - initiation`. |
+| AFT failure interval | For failed nests in the AFT model, the failure interval was defined from `LastPresent - initiation` to `LastChecked - initiation`. |
 | `LastPresent` | The last field check when the nest was known to be active. |
 | `LastChecked` | The final field check for the nest; for failed nests, this was the check when failure was observed. |
 | Robel density | A visual obstruction measurement of vegetation around the nest. Higher values indicate taller or denser vegetation cover. |
