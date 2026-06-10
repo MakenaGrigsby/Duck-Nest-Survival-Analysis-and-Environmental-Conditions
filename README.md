@@ -15,6 +15,29 @@ Two modeling approaches were used:
 
 The interval-censored AFT model was used because many nest failures were only known to occur between two nest checks. This allowed failed nests to be represented using lower and upper failure-time bounds instead of assigning all failures to a single check date.
 
+## Why This Analysis Was Needed
+
+Duck nests are not always found at the beginning of the nesting period, and failures are not always observed exactly when they happen. A nest may be active at one field check and found failed at a later check, which means the true failure time occurred somewhere between those two visits.
+
+Because of this, the analysis used estimated nest initiation as the time origin and treated many failures as interval-censored. Cox proportional hazards models were used as a standard comparison, while interval-censored accelerated failure time models were used as the final modeling approach because they better matched how the failure times were recorded.
+
+## Key Terms
+
+| Term | Meaning in this project |
+|---|---|
+| Nest failure | The event of interest. A nest was considered failed if failure was observed during monitoring. |
+| Right-censoring | A nest was not observed to fail by the final field check, so its later failure time was unknown. |
+| Interval-censoring | A failed nest was known to be active at one check and failed by a later check, so the exact failure time was only known to fall within that interval. |
+| Estimated initiation | The estimated date when the nest began. This was used as the time origin for survival time. |
+| `LastPresent` | The last field check when the nest was known to be active. |
+| `LastChecked` | The final field check for the nest; for failed nests, this was the check when failure was observed. |
+| Robel density | A visual obstruction measurement of vegetation around the nest. Higher values indicate taller or denser vegetation cover. |
+| First-7-day temperature | Mean temperature during the first 7 days after estimated nest initiation. |
+| First-7-day precipitation | Total precipitation during the first 7 days after estimated nest initiation. |
+| Cox proportional hazards model | A hazard-based survival model used as a course-aligned comparison. |
+| AFT model | An accelerated failure time model. In this project, it was used to model survival time directly using interval-censored failure times. |
+| Time ratio | The AFT model interpretation. Values greater than 1 indicate longer survival time, while values less than 1 indicate shorter survival time. |
+
 ## Data Source
 
 The duck nest data come from the publicly available dataset associated with:
@@ -75,9 +98,3 @@ The analysis was conducted in R. Main packages used include:
 * ggplot2
 * splines
 * daymetr
-
-Author
-
-Makena Grigsby
-Master’s Student in Statistics
-University of California, Riverside
